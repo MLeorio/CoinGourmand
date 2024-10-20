@@ -27,6 +27,9 @@ urlpatterns = [
     path('api/products/', ProductList.as_view(), name='product-list'),
 ]
 
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 # Pour servir les images en dev
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
